@@ -20,6 +20,9 @@ function reverse(numbers) {
 
 
 
+
+
+
 function reverseArray(matrix) {
 
     for (let index = 0; index < matrix.length; index++) {
@@ -30,6 +33,8 @@ function reverseArray(matrix) {
 
     return matrix;
 }
+
+
 
 
 
