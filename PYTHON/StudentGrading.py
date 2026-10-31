@@ -1,73 +1,73 @@
-def scoreCollection(noOfStudent, noOfSubjects):
+def score_collection(no_of_student, no_of_subjects):
 
-    scoresInput = []
+    scores_input = []
 
     print("\nEnter Student Score")
 
-    highestStudent = 0
-    lowestStudent = 0
+    highest_student = 0
+    lowest_student = 0
 
-    classTotal = 0
-    classAverage = 0.0
+    class_total = 0
+    class_average = 0.0
 
-    for index in range(noOfStudent):
+    for index in range(no_of_student):
 
         print("\n\nStudent", (index + 1))
 
-        scoreSum = 0
-        amountOfScores = 0
+        score_sum = 0
+        amount_of_scores = 0
 
-        studentScores = []
+        student_scores = []
 
-        for count in range(noOfSubjects):
+        for count in range(no_of_subjects):
 
-            scoreOfSubject = int(input(f"Enter score for Subject {(count + 1)}: "))
+            score_of_subject = int(input(f"Enter score for Subject {(count + 1)}: "))
 
-            while(scoreOfSubject < 0 or scoreOfSubject > 100):
+            while(score_of_subject < 0 or score_of_subject > 100):
 
                 print("Invalid score!")
 
-                scoreOfSubject = int(input("Enter score again: "))
+                score_of_subject = int(input("Enter score again: "))
 
-            studentScores.append(scoreOfSubject)
+            student_scores.append(score_of_subject)
 
-            scoreSum += scoreOfSubject
+            score_sum += score_of_subject
 
-            amountOfScores += 1
+            amount_of_scores += 1
 
-        scoresInput.append(studentScores)
+        scores_input.append(student_scores)
 
-        average = scoreSum / amountOfScores
+        average = score_sum / amount_of_scores
 
         if(index == 0):
 
-            lowestStudent = average
+            lowest_student = average
 
-        print("Total:", scoreSum)
+        print("Total:", score_sum)
         print("Average:", average, "%")
 
-        if(average > highestStudent):
+        if(average > highest_student):
 
-            highestStudent = average
+            highest_student = average
 
-        if(average < lowestStudent):
+        if(average < lowest_student):
 
-            lowestStudent = average
+            lowest_student = average
 
-        classTotal += scoreSum
+        class_total += score_sum
 
-        totalAverage = average / noOfStudent
+        total_average = average / no_of_student
 
-        classAverage += totalAverage
+        class_average += total_average
 
-    return scoresInput, highestStudent, lowestStudent, classTotal, classAverage    
-
-
+    return scores_input, highest_student, lowest_student, class_total, class_average    
 
 
 
 
-def displayClassSummary(highestStudent, lowestStudent, classTotal, classAverage):
+
+
+def displayClassSummary(highest_student, lowest_student, class_total, class_average):
 
     print(f"""
 
@@ -81,18 +81,18 @@ def displayClassSummary(highestStudent, lowestStudent, classTotal, classAverage)
 
     CLASS SUMMARY
     ===========================================================
-    Best Graduating Student Scored:  {highestStudent:.2f}
+    Best Graduating Student Scored:  {highest_student:.2f}
     ===========================================================
 
 
     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    Worst Graduating Student Scored: {lowestStudent:.2f}
+    Worst Graduating Student Scored: {lowest_student:.2f}
     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
     ===============================================
-    Class total score is: {classTotal}
-    Class Average score is: {classAverage:.2f}
+    Class total score is: {class_total}
+    Class Average score is: {class_average:.2f}
     ===============================================
 
 
@@ -103,11 +103,11 @@ def displayClassSummary(highestStudent, lowestStudent, classTotal, classAverage)
 
 print("STUDENT GRADING SYSTEM")
 
-noOfStudent = int(input("Enter the number of students: "))
+no_of_student = int(input("Enter the number of students: "))
 
-noOfSubjects = int(input("Enter the number of subjects: "))
+no_of_subjects = int(input("Enter the number of subjects: "))
 
-scoresInput, highestStudent, lowestStudent, classTotal, classAverage = scoreCollection(noOfStudent, noOfSubjects)
+scores_input, highest_student, lowest_student, class_total, class_average = score_collection(no_of_student, no_of_subjects)
 
-displayClassSummary(highestStudent, lowestStudent, classTotal, classAverage)
+displayClassSummary(highest_student, lowest_student, class_total, class_average)
         
